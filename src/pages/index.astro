@@ -6,39 +6,53 @@ import { Footer } from '../../devlink/Footer'; // Import the Footer component
 ---
 
 <Layout>
-  {/* Add Navbar with props. Be sure to include the client load directive */}
-  <Navbar 
+  <div
+    style={{
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between'
+    }}
+  >
+    {/* Navbar at the top */}
+    <Navbar 
       navbarLinkFeatures="Hello"
       navbarLinkProducts="Webflow"
       navbarLinkResources="Cloud"
       navbarLinkContact=""
-  client:load /> 
-  <Section
-    client:load
-    tag="section"
-    className="margin-bottom-24px"
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }}
-  >
-    <Container>
-      <Block
-        tag="div"
-        className="hero-split"
-        style={{
-          textAlign: 'center',
-          maxWidth: '600px',
-          margin: '0 auto'
-        }}
-      >
-        <h1 class="margin-bottom-24px">Welcome to Webflow Cloud</h1>
-        <p class="margin-bottom-24px">This is a simple test using Webflow Cloud and MCP.</p>
-      </Block>
-    </Container>
-  </Section>
-  <Footer client:load /> {/* Add Footer with Client load directive */}
+      client:load
+    /> 
+
+    {/* Section centered vertically */}
+    <Section
+      client:load
+      tag="section"
+      style={{
+        display: 'flex',
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}
+    >
+      <Container>
+        <Block
+          tag="div"
+          className="hero-split"
+          style={{
+            textAlign: 'center',
+            maxWidth: '600px',
+            margin: '0 auto'
+          }}
+        >
+          <h1 class="margin-bottom-24px">Welcome to Webflow Cloud</h1>
+          <p class="margin-bottom-24px">This is a simple test using Webflow Cloud and MCP.</p>
+        </Block>
+      </Container>
+    </Section>
+
+    {/* Footer at the bottom */}
+    <Footer client:load />
+  </div>
 </Layout>
 
 <style>
